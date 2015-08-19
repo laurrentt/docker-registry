@@ -47,6 +47,10 @@ class Base(driver.Base):
         self._config = config
         self._root_path = path or '/test'
         self._boto_conn = self.makeConnection()
+        print "Config:"
+        print config
+        print "Boto bucket:"
+        print config.boto_bucket
         self._boto_bucket = self._boto_conn.get_bucket(
             self._config.boto_bucket)
         logger.info("Boto based storage initialized")
